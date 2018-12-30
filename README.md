@@ -40,17 +40,9 @@ $ ./run-performance-tests-jar.sh
 ```
 
 
-##  How to run demo test load in the Taurus harness
-
-Run this bash script to start the dockerized aurus test harness:
-```
-$ ./startTaurus.sh
-```
-
 ## Other Info As Inspiration
 
 https://www.blazemeter.com/blog/how-integrate-docker-jenkins
 
 https://wiki.jenkins.io/display/JENKINS/Gatling+Plugin
-
 
