@@ -1,0 +1,74 @@
+// build.gradle
+
+buildscript {
+    repositories {
+        mavenCentral()
+		maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.2'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'scala'
+    id 'idea' // also need IntelliJ-IDEA Scala plugin
+    id 'com.github.johnrengelman.shadow' version '4.0.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = 
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.12.7'
+    compile 'io.gatling.highcharts:gatling-charts-highcharts:3.0.2'
+}
+
+task performance(type: JavaExec) {
+	description = 'Test performance of a service with Gatling'
+	group = 'verification'
+	classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [
+            "-Xmx2G"
+    ]
+	main = 'perf.gatling.Engine'
+}
+
+jar {
+    baseName = 'performance'
+    version =  '1.0.0'
+    manifest {
+        attributes(
+                'Main-Class': 'perf.gatling.Engine'
+        )
+    }
+    from {
+        sourceSets.main.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+shadowJar {
+    baseName = 'performance'
+    classifier = 'all'
+    version = version
+    configurations = [project.configurations.compile]
+    dependsOn compileScala
+}
+
+task runPerformanceJar(type: JavaExec) {
+    group = 'verification'
+    classpath = files('build/libs/performance-all.jar')
+    classpath += sourceSets.main.runtimeClasspath
+    jvmArgs = [
+            "-Xmx2G"
+    ]
+    main = 'perf.gatling.Engine'
+}

@@ -1,0 +1,13 @@
+
+execution:
+- executor: gatling
+  concurrency: 10
+  ramp-up: 30s
+  hold-for: 2m
+  scenario: computerworld
+
+scenarios:
+  computerworld:
+    script: /bzt-configs/performance-all.jar
+    simulation: perf.gatling.simulations.ComputerWorld
+
