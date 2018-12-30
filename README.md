@@ -46,3 +46,8 @@ https://www.blazemeter.com/blog/how-integrate-docker-jenkins
 
 https://wiki.jenkins.io/display/JENKINS/Gatling+Plugin
 
+## Documentation
+
+https://github.com/gatling/gatling/tree/2.3/gatling-core/src/main/scala/io/gatling/core
+
+
