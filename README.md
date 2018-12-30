@@ -1,26 +1,28 @@
-# Gatling with Gradle, Taurus, Docker, AND Jenkins
+# Gatling as a executable JAR with Gradle
 
-In the context of a Gradle build, this code demonstrates how to automate the performance tests of a RESTful Web Service by executing a .jar Gatling performance test archive in a dockerized Taurus test harness.
+In the context of a Gradle build, this code demonstrates how to automate the performance tests of a RESTful Web Service 
+by executing a .jar Gatling performance test archive.
 
 ## How This Works
 
-Trying not to tie the performance test execution and test harness to the build.  This way the user can choose to build the .jar differently and/or execute the .jar with a different test harness with simple config changes to this example project.
+This project does not tie the performance test execution and test harness to the build itself.  This way the user can 
+choose to execute the .jar any way they like.
 
-1. Gatling performance test project built into a runnable .jar file
-2. Taurus test harness that runs the .jar file
+1. We build the Gatling performance test project built into a runnable .jar file
+2. Trying to support execution of the .jar from Jenkins, or a test harness such as Taurus or Blazemeter.
 
 ## How to install 
 
 Clone this repository:
 
 ```
-$ git clone https://github.com/djangofan/gatling-with-gradle-taurus-and-docker.git
+$ git clone https://github.com/djangofan/gatling-jar-with-gradle.git
 ```
 
 #### Build with **gradle**:
 
 ```
-$ cd gatling-with-gradle-taurus-and-docker
+$ cd gatling-jar-with-gradle
 $ ./gradlew shadowJar
 ```
 
