@@ -16,13 +16,13 @@ choose to execute the .jar any way they like.
 Clone this repository:
 
 ```
-$ git clone https://github.com/djangofan/gatling-jar-with-gradle.git
+$ git clone https://github.com/djangofan/perf.gatling-jar-with-gradle.git
 ```
 
 #### Build with **gradle**:
 
 ```
-$ cd gatling-jar-with-gradle
+$ cd perf.gatling-jar-with-gradle
 $ ./gradlew shadowJar
 ```
 
@@ -48,6 +48,6 @@ https://wiki.jenkins.io/display/JENKINS/Gatling+Plugin
 
 ## Documentation
 
-https://github.com/gatling/gatling/tree/2.3/gatling-core/src/main/scala/io/gatling/core
+https://github.com/perf.gatling/perf.gatling/tree/2.3/perf.gatling-core/src/main/scala/io/perf.gatling/core
 
 

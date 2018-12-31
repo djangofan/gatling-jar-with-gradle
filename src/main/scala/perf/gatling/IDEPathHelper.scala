@@ -6,7 +6,7 @@ object IDEPathHelper {
 
   val projectRootDir: String = Paths.get(".").toAbsolutePath.normalize.toString
 
-  // .jar will be prepared with gatling.conf in root of jar, not just under src/main/resources
+  // .jar will be prepared with perf.gatling.conf in root of jar, not just under src/main/resources
   val gatlingConfUrl: String = projectRootDir + "/gatling.conf"
 
   val mavenSourcesDirectory = projectRootDir + "/src/test/scala"
@@ -17,7 +17,7 @@ object IDEPathHelper {
   val resourcesDirectory = mavenResourcesDirectory
   val simulationsDirectory = mavenSourcesDirectory + "/simulations"
   val dataDirectory = mavenResourcesDirectory + "/data"
-  val resultsDirectory = mavenTargetDirectory + "/gatling"
+  val resultsDirectory = mavenTargetDirectory + "/perf/gatling"
 
   val recorderConfigFile = mavenResourcesDirectory + "/recorder.conf"
   val recorderConfigFilePath: Path = Paths.get(recorderConfigFile)

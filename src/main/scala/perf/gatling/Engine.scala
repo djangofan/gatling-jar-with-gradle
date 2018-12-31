@@ -12,16 +12,16 @@ object Engine extends App {
   val context: LoggerContext = LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext]
 
   if (LOG_LEVEL.equals(Level.TRACE)) {
-  	context.getLogger("io.gatling.http.engine.response").setLevel(Level.valueOf(LOG_LEVEL))
+  	context.getLogger("io.perf.gatling.http.engine.response").setLevel(Level.valueOf(LOG_LEVEL))
   } else if (LOG_LEVEL.equals(Level.DEBUG)) {
-  	context.getLogger("io.gatling.http.engine.response").setLevel(Level.valueOf("DEBUG"))
+  	context.getLogger("io.perf.gatling.http.engine.response").setLevel(Level.valueOf("DEBUG"))
   } else {
-  	context.getLogger("io.gatling.http").setLevel(Level.valueOf("INFO"))
+  	context.getLogger("io.perf.gatling.http").setLevel(Level.valueOf("INFO"))
   }
 
   // GatlingPropertiesBuilder works only with Gatling 3.0.0 or higher
   val props = new GatlingPropertiesBuilder
-  props.simulationClass("perf.gatling.simulations.ComputerWorld")
+  props.simulationClass("perf.perf.gatling.simulations.ComputerWorld")
       .resourcesDirectory(IDEPathHelper.resourcesDirectory.toString)
       .resultsDirectory(IDEPathHelper.resultsDirectory.toString)
       .binariesDirectory(IDEPathHelper.mavenBinariesDirectory.toString)

@@ -1,8 +1,0 @@
-execution:
-  scenario: computerworld
-
-scenarios:
-  computerworld:
-    script: build/libs/performance-all.jar
-    simulation: perf.gatling.simulations.ComputerWorld
-
