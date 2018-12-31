@@ -21,7 +21,7 @@ object Engine extends App {
 
   // GatlingPropertiesBuilder works only with Gatling 3.0.0 or higher
   val props = new GatlingPropertiesBuilder
-  props.simulationClass("perf.perf.gatling.simulations.ComputerWorld")
+  props.simulationClass("perf.gatling.simulations.ComputerWorld")
       .resourcesDirectory(IDEPathHelper.resourcesDirectory.toString)
       .resultsDirectory(IDEPathHelper.resultsDirectory.toString)
       .binariesDirectory(IDEPathHelper.mavenBinariesDirectory.toString)

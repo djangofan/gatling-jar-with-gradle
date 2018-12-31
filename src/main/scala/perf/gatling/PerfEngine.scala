@@ -19,6 +19,8 @@ object PerfEngine extends App {
             context.getLogger("io.perf.gatling.http").setLevel(Level.valueOf("INFO"))
         }
 
+        //https://danielasfregola.com/2015/06/01/loading-configurations-in-scala/
+
         val testConfiguration = GatlingConfiguration.load()
 
         val testDescription = testConfiguration.config.getString("perf.gatling.core.runDescription")
